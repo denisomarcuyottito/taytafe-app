@@ -1,12 +1,12 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
+
 import { Tabs } from "./TabNavigator";
-import { HomeScreen, RestaurantScreen, OrderDeliveryScreen } from "../screens";
+import { RestaurantScreen, OrderDeliveryScreen } from "../screens";
 
 const Stack = createStackNavigator();
 
-export const StackNavigator = () => {
+const StackNavigator = () => {
   return (
     <>
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={"App"}>
@@ -17,3 +17,5 @@ export const StackNavigator = () => {
     </>
   );
 };
+
+export { StackNavigator };

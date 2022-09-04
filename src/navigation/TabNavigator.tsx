@@ -29,7 +29,7 @@ const screens: ScreenTab[] = [
   },
 ];
 
-export const Tabs = () => {
+const Tabs = () => {
   return (
     <>
       <Tab.Navigator
@@ -77,3 +77,5 @@ const styles = StyleSheet.create({
     elevation: 0,
   },
 });
+
+export { Tabs };

@@ -3,19 +3,11 @@ import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { TextInput } from "react-native-gesture-handler";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Keyboard } from "react-native";
 
-import { CategoryData, RootTabParamList, OrderItem, Restaurant, Menu } from "../../types";
+import { RootTabParamList, OrderItem, Restaurant, Menu } from "../../types";
 import { Header } from "../components/common/Header";
 import { COLORS, icons } from "../../constants";
-import { HomeRestaurantsList } from "../components/home/HomeRestaurantsList";
-import {
-  categoryData,
-  initialCurrentLocation,
-  restaurantsWithCategories,
-  restaurantData,
-  allMenu,
-} from "../../dummy-data";
+import { initialCurrentLocation, allMenu } from "../../dummy-data";
 import { RestaurantFoodInfo } from "../components/restaurant/RestaurantFoodInfo";
 
 type SearchScreenNavigationProp = BottomTabNavigationProp<RootTabParamList, "Search">;
@@ -25,7 +17,7 @@ type SearchScreenProps = {
 };
 
 const SearchScreen = ({ navigation }: SearchScreenProps) => {
-  const [currentLocation, setCurrentLocation] = useState(initialCurrentLocation);
+  const [currentLocation] = useState(initialCurrentLocation);
   const [bottomColor, setBottomColor] = useState<string>(COLORS.black);
   const [restaurant, setRestaurant] = useState<Restaurant | any>(allMenu);
   const [orderItems, setOrderItems] = React.useState<OrderItem[]>([]);
@@ -51,42 +43,9 @@ const SearchScreen = ({ navigation }: SearchScreenProps) => {
             autoCorrect={false}
             autoFocus
             placeholderTextColor={COLORS.darkgray}
-            placeholder="Ej. Hot Dogs"
+            placeholder="Ej. Alitas"
           />
         </View>
-        {/* <View
-          style={{
-            flexDirection: "row",
-            marginHorizontal: SIZES.padding * 2,
-            marginBottom: SIZES.padding,
-          }}
-        >
-          <TextInput
-            autoFocus
-            autoCorrect={false}
-            style={{
-              borderWidth: 1,
-              width: "80%",
-              marginTop: SIZES.padding,
-              marginRight: SIZES.padding,
-            }}
-          />
-          <Button title="Search" onPress={() => {}} />
-        </View> */}
-        {/* <HomeMainCategories
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onSelectCategory={(category: CategoryData) => onSelectCategory(category)}
-        /> */}
-        {/* <HomeRestaurantsList
-          restaurants={restaurants}
-          onPress={item =>
-            navigation.navigate("Restaurant", {
-              item,
-              currentLocation,
-            })
-          }
-        /> */}
         <RestaurantFoodInfo
           restaurant={restaurant}
           orderItems={orderItems}

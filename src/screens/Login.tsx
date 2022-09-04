@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
-import { ImageBackground, ScrollView, StyleSheet, TextInput, View } from "react-native";
-import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import { Image, ImageBackground, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 import RoundButton from "../components/Base/RoundButton";
@@ -9,6 +8,7 @@ import { AuthContext } from "../context/AuthContext";
 import { COLORS } from "../../constants/theme";
 
 const ImagePath = require("../../images/Recraftsoppify_aap_bg_effect.png");
+const logo = require("../../images/logo.png");
 
 export const Login = () => {
   const [bottomColorUser, setBottomColorUser] = useState(COLORS.black);
@@ -74,7 +74,7 @@ export const Login = () => {
                 secureTextEntry={true}
               />
             </View>
-            <View style={{ marginTop: 40 }}></View>
+            <View style={{ marginTop: 10 }}></View>
             <RoundButton
               label="Ingresar"
               buttonStyle={{ minWidth: 230 }}
@@ -109,6 +109,9 @@ export const Login = () => {
                   }}
                 />
               </View>
+            </View>
+            <View style={[style.childContainer, { marginTop: 15 }]}>
+              <Image source={logo} style={{ width: 100, height: 100 }} />
             </View>
           </View>
         </ScrollView>

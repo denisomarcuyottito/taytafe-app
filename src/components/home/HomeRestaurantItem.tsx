@@ -1,9 +1,10 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, View, Image, Text } from "react-native";
 import { AppStyles } from "../../../AppStyles";
+
 import { COLORS, FONTS, icons, SIZES } from "../../../constants";
 import { affordable, expensive, fairPrice } from "../../../dummy-data";
-import { CurrentLocation, Restaurant } from "../../../types";
+import { Restaurant } from "../../../types";
 
 type HomeRestaurantItemProps = {
   item: Restaurant;

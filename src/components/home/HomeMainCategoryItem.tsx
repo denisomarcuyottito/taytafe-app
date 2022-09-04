@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, View, Image, Text } from "react-native";
+
 import { COLORS, FONTS, SIZES } from "../../../constants";
 import { CategoryData } from "../../../types";
 import { AppStyles } from "../../../AppStyles";
@@ -35,6 +36,7 @@ export const HomeMainCategoryItem = ({
         ...styles.itemText,
         color: selectedCategory?.id === item.id ? COLORS.white : COLORS.black,
       }}
+      adjustsFontSizeToFit
     >
       {item.name}
     </Text>
@@ -63,6 +65,7 @@ const styles = StyleSheet.create({
     height: 30,
   },
   itemText: {
+    textAlign: "center",
     marginTop: SIZES.padding,
     ...FONTS.body5,
   },

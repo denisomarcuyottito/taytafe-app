@@ -21,6 +21,8 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
   const [restaurants, setRestaurants] = useState(restaurantsWithCategories);
   const [currentLocation, setCurrentLocation] = useState(initialCurrentLocation);
 
+  console.log(restaurantsWithCategories);
+
   function onSelectCategory(category: CategoryData) {
     const restaurantList = restaurantsWithCategories.filter(restaurant =>
       restaurant.categories.includes(category.id)
@@ -30,22 +32,13 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
   }
 
   useEffect(() => {
-    setSelectedCategory({
-      id: 1,
-      name: "Rice",
-      icon: icons.rice_bowl,
-    });
+    onSelectCategory(categoryData[0]);
   }, []);
 
   return (
     <>
       <SafeAreaView style={styles.container}>
-        {/* <Header
-          leftIcon={icons.nearby}
-          rightIcon={icons.basket}
-          headerText={currentLocation.streetName}
-        /> */}
-        <Header leftIcon={icons.nearby} rightIcon={icons.basket} headerText="Principal" />
+        <Header leftIcon={icons.nearby} rightIcon={icons.basket} headerText="Taytafe" />
         <HomeMainCategories
           categories={categories}
           selectedCategory={selectedCategory}

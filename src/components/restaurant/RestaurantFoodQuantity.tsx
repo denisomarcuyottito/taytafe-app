@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
 import { AppStyles } from "../../../AppStyles";
 import { COLORS, FONTS, SIZES } from "../../../constants";
-import { OrderItem } from "../../../types";
 
 type RestaurantOrderProps = {
   onEdit: (e: "+" | "-") => void;

@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";
+
 import { SIZES } from "../../../constants";
 import { Restaurant } from "../../../types";
 import { HomeRestaurantItem } from "./HomeRestaurantItem";

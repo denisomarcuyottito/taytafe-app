@@ -54,8 +54,6 @@ export const RestaurantFoodInfo = ({
 
   const getTotal = () => orderItems.reduce((a, b) => a + (b.total || 0), 0);
 
-  // console.log(restaurant?.menu);
-
   return (
     <>
       <Animated.ScrollView
@@ -85,7 +83,7 @@ export const RestaurantFoodInfo = ({
               {/* Name and Description */}
               <View style={styles.descriptionContainer}>
                 <Text style={styles.descriptionText}>
-                  {item.name} - S/.{item.price.toFixed(2)}
+                  {item.name} - S/ {item.price.toFixed(2)}
                 </Text>
                 <Text style={{ ...FONTS.body3, textAlign: "center" }}>{item.description}</Text>
               </View>

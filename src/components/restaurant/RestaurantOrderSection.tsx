@@ -19,7 +19,7 @@ export const RestaurantOrderSection = ({
     <View style={styles.container}>
       <View style={styles.amountDetailsContainer}>
         <Text style={{ ...FONTS.h3 }}>{basketCount} pedidos</Text>
-        <Text style={{ ...FONTS.h3 }}>S/.{total.toFixed(2)}</Text>
+        <Text style={{ ...FONTS.h3 }}>S/ {total.toFixed(2)}</Text>
       </View>
       <View style={styles.cardDetailsContainer}>
         <View style={{ flexDirection: "row" }}>

@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Header } from "../components/common/Header";
 import { AuthContext } from "../context/AuthContext";
 import RoundButton from "../components/Base/RoundButton";
-import { COLORS, SIZES } from "../../constants";
+import { COLORS, icons, SIZES } from "../../constants";
 
 const ProfileScreen = () => {
   const { logOut } = useContext(AuthContext);
@@ -14,9 +14,12 @@ const ProfileScreen = () => {
   return (
     <>
       <SafeAreaView style={style.container}>
-        <Header leftIcon={null} rightIcon={null} headerText="Perfil" />
+        <Header leftIcon={null} rightIcon={icons.user} headerText="Perfil" />
         <View style={style.childContainer}>
           <Image source={imgProfile} style={style.logo} />
+        </View>
+        <View style={style.childContainer}>
+          {/* <Image source={imgProfile} style={style.logo} /> */}
         </View>
         <RoundButton
           label="Cerrar sesión"
